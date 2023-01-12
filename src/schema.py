@@ -7,3 +7,4 @@ class Info(NamedTuple):
     game_port: int
     query_port: int
     game_name: str
+    address: str = None

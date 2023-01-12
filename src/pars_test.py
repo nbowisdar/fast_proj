@@ -18,7 +18,9 @@ def _save_one(server: dict):
         game_name=server_name,
         ip=attr['ip'],
         game_port=attr['port'],
-        query_port=attr['portQuery'],
+        address=attr['address'],
+        # query_port=attr['portQuery'],
+        query_port=attr['port'],
         server_name=attr['name']
     ))
 
@@ -31,9 +33,9 @@ def parse_ten(data: dict) -> next_link:
 
 def main():
     count = 0
-    # url = "https://api.battlemetrics.com/servers"
+    url = "https://api.battlemetrics.com/servers"
     # last
-    url = "https://api.battlemetrics.com/servers?page%5Bkey%5D=14617%2C17697017&page%5Brel%5D=next"
+    #url = "https://api.battlemetrics.com/servers?page%5Bkey%5D=1%2C5873087&page%5Brel%5D=next&sort=groupRank&fields%5Bserver%5D=rank%2Cname%2Cplayers%2CmaxPlayers%2Caddress%2Cip%2Cport%2Ccountry%2Clocation%2Cdetails%2Cstatus&relations%5Bserver%5D=game%2CserverGroup&include=serverGroup&filter%5Bgame%5D=minecraft&filter%5BgroupLeader%5D=true"
     while True:
         time.sleep(1)
         resp = requests.get(url, headers={"User-Agent": agent})

@@ -2,7 +2,7 @@ from pathlib import Path
 from peewee import SqliteDatabase, Model, CharField, IntegerField, ForeignKeyField
 
 BASE_DIR = Path(__file__).parent.parent.parent
-db = SqliteDatabase(BASE_DIR / 'old.db')
+db = SqliteDatabase(BASE_DIR / 'mine.db')
 
 
 class BaseModel(Model):
@@ -17,6 +17,7 @@ class Game(BaseModel):
 class Server(BaseModel):
     name = CharField()
     ip = CharField()
+    address = CharField(null=True)
     game_port = IntegerField()
     query_port = IntegerField()
     game = ForeignKeyField(ForeignKeyField(Game), backref="servers")

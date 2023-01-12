@@ -1,1 +1,0 @@
-https://api.battlemetrics.com/servers?page%5Bkey%5D=18175%2C14495802&page%5Brel%5D=next
